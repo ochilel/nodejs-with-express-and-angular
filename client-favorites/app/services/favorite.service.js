@@ -21,6 +21,10 @@ var FavoriteService = (function () {
         return this._http.get(this.url + 'favorites')
             .map(function (res) { return res.json(); });
     };
+    FavoriteService.prototype.getFavorite = function (id) {
+        return this._http.get(this.url + 'favorite/' + id)
+            .map(function (res) { return res.json(); });
+    };
     FavoriteService = __decorate([
         core_1.Injectable(),
         __metadata("design:paramtypes", [http_1.Http])

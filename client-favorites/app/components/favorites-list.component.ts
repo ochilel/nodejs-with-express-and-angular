@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { FavoriteService } from '../services/favorite.service';
 import { Favorite } from '../models/favorite';
@@ -23,7 +24,6 @@ export class FavoritesListComponent implements OnInit{
     }
 
     ngOnInit(){
-        console.log('favoritos list cargado');
         this._favoriteService.getFavorites().subscribe(
             result => {
                 this.favorites = result.favoritos;
@@ -34,7 +34,6 @@ export class FavoritesListComponent implements OnInit{
             error => {
                 this.errorMessage = <any>error;
                 if (this.errorMessage != null){
-                    console.log(this.errorMessage);
                     alert('Error en la petición');
                 }
             }

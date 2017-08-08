@@ -18,7 +18,6 @@ var FavoritesListComponent = (function () {
     }
     FavoritesListComponent.prototype.ngOnInit = function () {
         var _this = this;
-        console.log('favoritos list cargado');
         this._favoriteService.getFavorites().subscribe(function (result) {
             _this.favorites = result.favoritos;
             if (!_this.favorites) {
@@ -27,7 +26,6 @@ var FavoritesListComponent = (function () {
         }, function (error) {
             _this.errorMessage = error;
             if (_this.errorMessage != null) {
-                console.log(_this.errorMessage);
                 alert('Error en la petición');
             }
         });

@@ -10,8 +10,10 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
+var app_routing_1 = require("./app.routing");
 var app_component_1 = require("./app.component");
 var favorites_list_component_1 = require("./components/favorites-list.component");
+var favorite_detail_component_1 = require("./components/favorite-detail.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -21,11 +23,16 @@ var AppModule = (function () {
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
                 http_1.HttpModule,
-                http_1.JsonpModule
+                http_1.JsonpModule,
+                app_routing_1.routing
             ],
             declarations: [
                 app_component_1.AppComponent,
-                favorites_list_component_1.FavoritesListComponent
+                favorites_list_component_1.FavoritesListComponent,
+                favorite_detail_component_1.FavoriteDetailComponent
+            ],
+            providers: [
+                app_routing_1.appRoutingProviders
             ],
             bootstrap: [app_component_1.AppComponent]
         })
